@@ -1,6 +1,6 @@
 # 🏥 Hospital Agent Workflow System (Powered by Portia + IPFS)
 
-<img width="100%" alt="Dashboard Screenshot" src="https://github.com/user-attachments/assets/YOUR_DASHBOARD_SCREENSHOT_LINK_HERE">
+<img width="1395" alt="Screenshot 2025-04-13 at 10 12 44 AM" src="https://github.com/user-attachments/assets/55c58425-b3ef-4e05-948c-2f2a6e21d519" />
 
 An intelligent hospital workflow automation tool that empowers nurses and doctors to manage patient transcripts, automate administrative tasks, and securely store and share information using AI agents, IPFS, and encrypted data flows.
 
@@ -56,22 +56,27 @@ This system is built using **FastAPI**, **Portia AI Planning Agents**, **ChromaD
 ## 📸 Screenshots
 
 
-
-- **Login Screen**  
-  ![Login]<img width="1395" alt="Screenshot 2025-04-13 at 10 12 44 AM" src="https://github.com/user-attachments/assets/55c58425-b3ef-4e05-948c-2f2a6e21d519" />
+  
 
 
-- **Nurse Upload Dashboard**  
-  ![Nurse](https://github.com/user-attachments/assets/NURSE_DASHBOARD_SCREENSHOT)
+- **Admin Upload Dashboard**  
+  ![Admin]<img width="1408" alt="image" src="https://github.com/user-attachments/assets/746f0cbd-e04e-4047-b7cf-b17d1457a022" />
+
 
 - **Doctor Dashboard with Decrypted Transcript**  
   ![Doctor](https://github.com/user-attachments/assets/DOCTOR_DASHBOARD_SCREENSHOT)
 
 - **Slack Notification**  
-  ![Slack](https://github.com/user-attachments/assets/SLACK_NOTIFICATION_SCREENSHOT)
+  ![Slack]<img width="978" alt="image" src="https://github.com/user-attachments/assets/1dfeb1db-5c8b-4ec3-89a2-b05273d8b964" />
+  <img width="806" alt="image" src="https://github.com/user-attachments/assets/4fb64522-ba66-4a2e-b553-d9b5a85e7967" />
+
+
 
 - **Encrypted IPFS Transcript**  
-  ![IPFS](https://github.com/user-attachments/assets/IPFS_SCREENSHOT)
+  ![IPFS]<img width="1074" alt="image" src="https://github.com/user-attachments/assets/a1bf287a-f1e2-4665-93b2-d9d1eb23faa8" />
+  <img width="1430" alt="image" src="https://github.com/user-attachments/assets/6b0ab86b-e4c7-456a-bd20-4cd8c8e2368e" />
+
+
 
 ---
 
