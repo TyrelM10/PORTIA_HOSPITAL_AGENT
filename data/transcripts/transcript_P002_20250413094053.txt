@@ -1,0 +1,15 @@
+Junior Doctor (Dr. Raj): Hi Mr. Shetty. I reviewed your chart and the pain log from yesterday. Is the back pain still affecting your sleep?
+
+Mr. Shetty: Yeah, it’s been hard to get comfortable. Sitting or lying down too long makes it worse.
+
+Dr. Raj: Understood. Based on how long this has been going on and the location of the pain, I think it’s time to involve an orthopedic specialist.
+
+Mr. Shetty: Do you mean I’ll need another scan?
+
+Dr. Raj: Possibly. But the first step is a consult. I’ll raise a request in the system for an appointment with one of our orthopedic doctors.
+
+Mr. Shetty: Alright. Will someone call me or do I get a message?
+
+Dr. Raj: Once the senior doctor approves it, the system will send you a confirmation with date and time.
+
+Mr. Shetty: Got it. Appreciate it.

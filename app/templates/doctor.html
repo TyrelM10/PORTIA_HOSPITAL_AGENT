@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doctor Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script>
+    function showLoader(id) {
+      document.getElementById(`loader-${id}`).style.display = "inline";
+    }
+  </script>
+</head>
+<body>
+  <div class="header">
+    <img src="/static/images/logo1.png" alt="Logo" style="height: 80px;">
+    <a href="/logout" class="logout-btn">Logout</a>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <h2>🩺 Doctor Dashboard</h2>
+  
+      <h3>✅ Approved Tasks</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Patient</th>
+            <th>Type</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for task in pending_tasks %}
+  <tr>
+    <td>{{ task.task_id }}</td>
+    <td>{{ task.patient_id }}</td>
+    <td>{{ task.task_type }}</td>
+    <td>
+      <form class="approve-form" method="post" action="/doctor/approve">
+        <input type="hidden" name="task_id" value="{{ task.task_id }}" />
+        <input type="hidden" name="approve" value="y" />
+        <button type="submit">✅ Approve</button>
+      </form>
+      <form class="approve-form" method="post" action="/doctor/approve">
+        <input type="hidden" name="task_id" value="{{ task.task_id }}" />
+        <input type="hidden" name="approve" value="n" />
+        <input type="text" name="reason" placeholder="Reason" required />
+        <button type="submit">❌ Reject</button>
+      </form>
+    </td>
+  </tr>
+  {% if task.transcript_content %}
+  <tr>
+    <td colspan="4">
+      <div class="transcript-box">
+        <strong>📄 Transcript:</strong><br>
+        <pre>{{ task.transcript_content }}</pre>
+      </div>
+    </td>
+  </tr>
+  {% endif %}
+{% endfor %}
+
+        </tbody>
+      </table>
+  
+      <h3>🕓 Pending Tasks</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Patient</th>
+            <th>Type</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for task in pending_tasks %}
+            <tr>
+              <td>{{ task.task_id }}</td>
+              <td>{{ task.patient_id }}</td>
+              <td>{{ task.task_type }}</td>
+              <td>
+                <form class="approve-form" method="post" action="/doctor/approve">
+                  <input type="hidden" name="task_id" value="{{ task.task_id }}" />
+                  <input type="hidden" name="approve" value="y" />
+                  <button type="submit">✅ Approve</button>
+                </form>
+                <form class="approve-form" method="post" action="/doctor/approve">
+                  <input type="hidden" name="task_id" value="{{ task.task_id }}" />
+                  <input type="hidden" name="approve" value="n" />
+                  <input type="text" name="reason" placeholder="Reason" required />
+                  <button type="submit">❌ Reject</button>
+                </form>
+              </td>
+            </tr>
+            {% if task.transcript_content %}
+            <tr>
+              <td colspan="4">
+                <div class="transcript-box">
+                  <strong>📄 Transcript:</strong><br>
+                  <pre>{{ task.transcript_content }}</pre>
+                </div>
+              </td>
+            </tr>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+    <!-- RIGHT SIDE: Approved Tasks -->
+    <div class="right">
+      <h2>✅ Approved Tasks</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Patient</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Transcript</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for task in approved_tasks %}
+            <tr>
+              <td>{{ task.task_id }}</td>
+              <td>{{ task.patient_id }}</td>
+              <td>{{ task.task_type }}</td>
+              <td>{{ task.status }}</td>
+              <td>
+                {% if task.transcript_content %}
+                  <div style="white-space: pre-wrap; font-size: 12px; max-height: 120px; overflow-y: auto; border: 1px solid #ccc; padding: 8px;">
+                    {{ task.transcript_content }}
+                  </div>
+                {% else %}
+                  N/A
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

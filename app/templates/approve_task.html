@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Approve Task</title>
+  <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+  <h1>Approve Task</h1>
+  <p><strong>ID:</strong> {{ task["id"] }}</p>
+  <p><strong>Type:</strong> {{ task["task_type"] }}</p>
+  <p><strong>Content:</strong> {{ task["content"] }}</p>
+  <form method="post">
+    <button name="action" value="Approve">✅ Approve</button>
+    <button name="action" value="Reject">❌ Reject</button>
+  </form>
+  <br>
+  <a href="/doctor">Back to Doctor Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+Junior Doctor (Dr. Mehul): Hello, Mrs. Jain. The nurse said you’ve been experiencing numbness in your fingers again?
+
+Mrs. Jain: Yes, and this morning I had a headache that lasted almost two hours.
+
+Dr. Mehul: Hmm. Combined with the numbness, this could be neurological. Have you noticed anything else—dizziness, or confusion?
+
+Mrs. Jain: No confusion, but I did feel a bit lightheaded while brushing my teeth.
+
+Dr. Mehul: Alright. I think a neurologist should evaluate you. I’ll initiate a referral for a consultation with one of our neurologists.
+
+Mrs. Jain: Do I need to talk to someone for that?
+
+Dr. Mehul: Not directly. I’ll send the request to the senior doctor for approval. Once it’s cleared, the system will notify you with the appointment details.
+
+Mrs. Jain: Okay, I’ll keep an eye out. Thanks, Doctor.
+

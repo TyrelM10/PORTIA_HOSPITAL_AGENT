@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background-color: white;
+    }
+
+    .header {
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background: white;
+      
+    }
+
+    .header img {
+      height: 120px;    
+      width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+      }
+
+    .logout {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100% - 80px);
+    }
+
+    .left {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-right: 1px solid #e5e7eb;
+    }
+
+    .right {
+      width: 50%;
+      padding: 20px;
+      background-color: white;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #111827;
+    }
+
+    h3 {
+      margin-bottom: 12px;
+      color: #374151;
+    }
+
+    .form-container {
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+    }
+
+    .form-container .preview-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #111827;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .form-container button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .tasks {
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f3f4f6;
+    }
+
+    .transcript-box {
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      height: 100%;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      font-size: 15px;
+      border: 1px solid #d1d5db;
+    }
+
+    .msg {
+      background: #dcfce7;
+      color: #166534;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      text-align: center;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="/static/images/logo1.png" alt="Logo" />
+    <a href="/logout"><button class="logout">Logout</button></a>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <h2>👩‍⚕️ Admin Dashboard</h2>
+
+      {% if msg %}
+        <div class="msg">{{ msg }}</div>
+      {% endif %}
+
+      <form class="form-container" id="uploadForm" method="post" action="/nurse/upload" enctype="multipart/form-data">
+        <input type="text" name="patient_id" placeholder="Patient ID" required />
+        <input type="text" name="nurse_id" placeholder="Nurse ID" required />
+        <input type="file" id="transcriptFile" name="file" accept=".txt" required />
+        <button type="button" class="preview-btn" onclick="previewTranscript()">Preview Transcript</button>
+        <button type="submit">Submit</button>
+      </form>
+
+      <div class="tasks">
+        <h3>🗂️ All Tasks</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Patient</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Assigned</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for task in tasks %}
+              <tr>
+                <td>{{ task.task_id }}</td>
+                <td>{{ task.patient_id }}</td>
+                <td>{{ task.task_type }}</td>
+                <td>{{ task.status }}</td>
+                <td>{{ task.assigned_to }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="right">
+      <h3>📄 Transcript Preview</h3>
+      <div class="transcript-box" id="previewBox">
+        {% if transcript_text %}
+          {{ transcript_text }}
+        {% else %}
+          No transcript uploaded yet.
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function previewTranscript() {
+      const fileInput = document.getElementById('transcriptFile');
+      const previewBox = document.getElementById('previewBox');
+
+      if (fileInput.files.length === 0) {
+        alert("Please choose a file first.");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        previewBox.textContent = e.target.result;
+      };
+      reader.readAsText(fileInput.files[0]);
+    }
+  </script>
+</body>
+</html>

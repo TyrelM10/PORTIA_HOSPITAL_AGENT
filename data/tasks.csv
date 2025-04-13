@@ -1,0 +1,5 @@
+task_id,patient_id,task_type,details,status,assigned_to,created_by,transcript_link,decryption_key
+T001,P002,book_specialist,"Orthopedic, persistent back pain",calendar_sent,dr_ortho,N001,http://127.0.0.1:8080/ipfs/QmZCXeFdT2LLDY1PzGQEdjEnxJhaHdeHiToeWAZN8CSfkK,086SPXzjjhVGRHDJdFNgRPlBnXDlPY4G9qYSkAX_2J4=
+T002,P002,book_specialist,"Orthopedic, persistent back pain",calendar_sent,dr_ortho,N002,http://127.0.0.1:8080/ipfs/QmeTyT2n5KHMAKHpUeoWg1dsCLJZWL2fe6WHYGKcaR3UkX,u0bqXSV2IYzQFP-e5jRxFe6F_gQG6yThIaGhjvL3gsY=
+T003,P002,prescribe_medicine,"Azithromycin 250mg once daily for 3 days, Vitamin C daily for a week",done,pharmacist,N001,http://127.0.0.1:8080/ipfs/QmcsnWyHBWLpLoPeB4Gf9ANGp7ss6DArWihbzkFs3ovcwq,g9_awnWOsITVab8HZRpLPAt54Z2h7ccWG0WbZqCZ3fo=
+T004,P002,book_specialist,"Orthopedic, persistent back pain",calendar_sent,dr_ortho,N002,http://127.0.0.1:8080/ipfs/QmS9DFmwZk8fL5CQjHeg8tjWptC88XEX7REDfGWcMTHUk6,N-pJZelfzmW5Mip6gTNGyOL7YbI8tsH4EKhxOcZkvRg=

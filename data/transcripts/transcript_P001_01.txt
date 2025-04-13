@@ -1,0 +1,23 @@
+Nurse (Sarah): Good morning, Mr. Patel. How are you feeling today?
+
+Patient (Mr. Patel): Morning. I’m feeling better. A bit tired, but no dizziness today.
+
+Sarah: That’s good to hear. I wanted to go over your latest blood sugar report with you. Is this a good time?
+
+Mr. Patel: Yes, of course. I’ve been waiting to hear about that.
+
+Sarah: Alright. So, your fasting blood glucose this morning was 104 mg/dL, which is within the normal range. Yesterday it was slightly elevated, but that seems to have stabilized now.
+
+Mr. Patel: That sounds better than before. So does that mean I can go home today?
+
+Sarah: Possibly, yes. But let me check a couple more things. Have you had any symptoms like blurred vision or shakiness in the last 24 hours?
+
+Mr. Patel: No, none of that. I’ve been eating what the dietician gave me and walking around a bit.
+
+Sarah: That’s great. Your vitals are stable, and if the doctor agrees during the final review, we’ll likely discharge you later today with a follow-up plan and prescription for your medication.
+
+Mr. Patel: Thank you. Do I need to check my sugar every day at home?
+
+Sarah: Yes, we’ll give you a glucometer before you leave. You’ll need to monitor your sugar twice a day for the next week. We’ll also schedule a follow-up visit in about 5 days.
+
+Mr. Patel: Sounds good. Appreciate it.

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | HOUSE Doctor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+      }
+      
+      html, body {
+        height: 100%;
+        overflow: hidden;
+        background: white;
+      }
+      
+      .header-banner img.logo-top {
+        position: absolute;
+        top: 20px;
+        left: 40px;
+        width: 60px;
+      }
+      
+      .header-banner h1 {
+        color: white;
+        font-size: 36px;
+        font-weight: 800;
+        z-index: 2;
+      }
+      
+      .split-body {
+        display: flex;
+        height: calc(100% - 160px);
+        background: white;
+      }
+      
+      .split-container {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+      }
+      
+      .left-panel {
+        width: 60%;
+        padding: 24px 48px;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      
+      .mascot-side {
+        position: absolute;
+        left: 60px;
+        top: 20%;
+        width: 160px;
+        animation: floaty 4s ease-in-out infinite;
+      }
+      
+      .logo-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      
+      .logo-img {
+        width: 80px;
+      }
+      
+      h1 {
+        font-size: 32px;
+        font-weight: 700;
+        color: #1d1d1d;
+        text-align: center;
+      }
+      
+      .slogan {
+        margin-bottom: 12px;
+        font-size: 18px;
+        color: #6b7280;
+        text-align: center;
+      }
+      
+      .error-msg {
+        background-color: #ffe4e4;
+        color: #b91c1c;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        width: 100%;
+        max-width: 320px;
+        font-size: 14px;
+      }
+      
+      .login-form {
+        background: #f9fafb;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
+        width: 100%;
+        max-width: 320px; /* Half of 640px */
+      }
+      
+      .login-form h2 {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #111827;
+        text-align: center;
+      }
+      
+      .login-form input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 16px;
+        border: 1px solid #d1d5db;
+        border-radius: 10px;
+        font-size: 14px;
+        background-color: #fff;
+      }
+      
+      .login-form button {
+        width: 100%;
+        padding: 14px;
+        background-color: #111827;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      
+      .login-form button:hover {
+        background-color: #2563eb;
+      }
+      
+      .footer-text {
+        margin-top: 32px;
+        font-size: 14px;
+        color: #9ca3af;
+        text-align: center;
+      }
+      
+      .right-panel {
+        width: 40%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 30px;
+        background: white;
+      }
+      
+      .header-logo-only {
+        width: 100%;
+        height: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+      }
+      
+      .center-logo {
+        height: 200px;
+        object-fit: contain;
+      }
+      
+      .bg-img {
+        width: 90%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 24px;
+      }
+      
+      @keyframes floaty {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+      }
+      
+      
+  </style>
+</head>
+<body>
+    <div class="header-logo-only">
+        <img src="/static/images/logo1.png" alt="Portia Care Logo" class="center-logo" />
+      </div>
+      
+
+  <div class="split-body">
+    <div class="split-container">
+      <div class="left-panel">
+        <img src="/static/images/attachment_b35047f4-5b16-41b0-8bb2-40ed273f23e6_london-element_01-04.png" class="mascot-side" alt="Floating Mascot Side" />
+
+        <div class="logo-row">
+          <img src="/static/images/Logo_Portia_Symbol_Black.png" alt="Portia Logo" class="logo-img" />
+          <h1>Portia x Encode AI</h1>
+          <img src="/static/images/https___prod-files-secure.s3.us-west-2.amazonaws.com_d0c8094a-e610-4814-9977-ce61e347ef5a_e89dd714-c357-4cad-9245-0ef38a99a589_encode_club_circle_black_reduced_01.png" alt="Encode Logo" class="logo-img" />
+        </div>
+        <p class="slogan">AI-powered care made simple</p>
+        {% if error %}
+          <div class="error-msg">{{ error }}</div>
+        {% endif %}
+        <form method="post" class="login-form">
+          <h2>Login to Your Account</h2>
+          <input type="text" name="username" placeholder="Enter your username" required />
+          <input type="password" name="password" placeholder="Enter your password" required />
+          <button type="submit">Login</button>
+        </form>
+        <footer class="footer-text">© 2025 Portia x Encode AI • All rights reserved</footer>
+      </div>
+      <div class="right-panel">
+        <img src="/static/images/bg2.png" alt="Hospital Illustration" class="bg-img" />
+      </div>
+    </div>
+  </div>
+</body>
+</html>
