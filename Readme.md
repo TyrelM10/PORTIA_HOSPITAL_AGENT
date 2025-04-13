@@ -35,19 +35,19 @@ This system is built using **FastAPI**, **Portia AI Planning Agents**, **ChromaD
    - Transcripts are encrypted using Fernet.
    - Encrypted files are uploaded to IPFS via Pinata.
    - A task is created with transcript link and key.
-
 2. **AI Agent Extracts Tasks**
+3. **AI Agent Extracts Tasks**
    - Using Portia + OpenAI, tasks are extracted (send prescription, schedule appointments, etc.).
    - Tasks are stored in `tasks.csv` with metadata.
 
-3. **Slack Notification**
+4. **Slack Notification**
    - Assigned doctor receives a Slack DM about the new task.
 
-4. **Doctor Dashboard**
+5. **Doctor Dashboard**
    - Doctor logs in, decrypts transcript, and reviews task.
    - Can approve or reject with comments.
 
-5. **Automated Action**
+6. **Automated Action (Google Calander)**
    - If approved, an email is sent or calendar event created.
    - Task status is updated in `tasks.csv`.
 
