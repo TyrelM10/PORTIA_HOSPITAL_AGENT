@@ -55,10 +55,11 @@ This system is built using **FastAPI**, **Portia AI Planning Agents**, **ChromaD
 
 ## 📸 Screenshots
 
-> _(Replace links with your actual screenshot image URLs or paths)_
+
 
 - **Login Screen**  
-  ![Login](https://github.com/user-attachments/assets/LOGIN_SCREENSHOT)
+  ![Login]<img width="1395" alt="Screenshot 2025-04-13 at 10 12 44 AM" src="https://github.com/user-attachments/assets/55c58425-b3ef-4e05-948c-2f2a6e21d519" />
+
 
 - **Nurse Upload Dashboard**  
   ![Nurse](https://github.com/user-attachments/assets/NURSE_DASHBOARD_SCREENSHOT)
